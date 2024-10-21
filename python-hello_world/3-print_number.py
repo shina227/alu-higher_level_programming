@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 number = 98
-print(f"{number} Battery street")
+street_name = "Battery street"
+print(f"{number} {street_name}")
