@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-
-print("".join(chr(i) for i in range(97, 123)), end="")
+# Print the ASCII alphabet in lowercase without a new line
+print("{}".format("abcdefghijklmnopqrstuvwxyz"), end="")
