@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-import calculator_1
 
+from calculator_1 import add, sub, mul, div
+
+# Define the variables
 a = 10
 b = 5
 
-if __name__ == "__main__":
-    print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
-    print("{} - {} = {}".format(a, b, calculator_1.sub(a, b)))
-    print("{} * {} = {}".format(a, b, calculator_1.mul(a, b)))
-    print("{} / {} = {}".format(a, b, calculator_1.div(a, b)))
+# Call the functions and print the results
+print(f"{a} + {b} = {add(a, b)}")
+print(f"{a} - {b} = {sub(a, b)}")
+print(f"{a} * {b} = {mul(a, b)}")
+print(f"{a} / {b} = {div(a, b)}")
