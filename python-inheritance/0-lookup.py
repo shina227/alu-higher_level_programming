@@ -4,7 +4,7 @@
 
 def lookup(obj):
     """Return attributes
-    Args:
+    Args :
         - obj: object to get attributes
     """
 

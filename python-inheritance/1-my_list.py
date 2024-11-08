@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""List inheritance"""
+""""List inheritance"""
 
 
 class MyList(list):
