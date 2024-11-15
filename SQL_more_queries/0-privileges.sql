@@ -1,20 +1,17 @@
--- This script lists all privileges of the MySQL users
-user_0d_1 and user_0d_2 on localhost.
+-- This script checks for the existence of MySQL users
+user_0d_1 and user_0d_2 on localhost
+-- and lists their privileges.
 
--- Create user user_0d_1 if it does not exist
-CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost';
+-- Check if user_0d_1 exists
+SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = 'user_0d_1'
+AND host = 'localhost') AS user_exists;
 
--- Grant all privileges to user_0d_1
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+-- Check if user_0d_2 exists
+SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = 'user_0d_2'
+AND host = 'localhost') AS user_exists;
 
--- Create user user_0d_2 if it does not exist
-CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
-
--- Grant all privileges to user_0d_2
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
-
--- Show grants for user_0d_1
+-- Show grants for user_0d_1 if it exists
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
 
--- Show grants for user_0d_2
+-- Show grants for user_0d_2 if it exists
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
