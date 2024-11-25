@@ -1,16 +1,22 @@
 #!/usr/bin/python3
-"""  fetches https://alu-intranet.hbtn.io/status  """
+"""
+This script fetches the status from a specified URL and
+displays the response details.
+"""
 
 import urllib.request
 
-
 if __name__ == "__main__":
-    url = "https://alu-intranet.hbtn.io/status"
+    url = 'https://alu-intranet.hbtn.io/status'
+
     with urllib.request.urlopen(url) as response:
         body = response.read()
 
+        output = (
+            "Body response:\n"
+            f"\t- type: {type(body)}\n"
+            f"\t- content: {body}\n"
+            f"\t- utf8 content: {body.decode('utf-8')}\n"
+        )
 
-    print("Body response:")
-    print("\t- type: {}".format(type(body)))
-    print("\t- content: {}".format(body))
-    print("\t- utf8 content: {}".format(body.decode("utf-8")))
+        print(output)
