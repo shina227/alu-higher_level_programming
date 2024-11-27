@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""Fetches https://intranet.hbtn.io/status."""
+"""
+This module fetches the status from the specified URL and displays
+the response type and content in a formatted manner.
+"""
+
 import requests
 
-
 if __name__ == "__main__":
-    r = requests.get("https://intranet.hbtn.io/status")
+    response = requests.get('https://alu-intranet.hbtn.io/status')
     print("Body response:")
-    print("\t- type: {}".format(type(r.text)))
-    print("\t- content: {}".format(r.text))
+    print(f"\t- type: {type(response.text)}")
+    print(f"\t- content: {response.text}")
